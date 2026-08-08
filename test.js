@@ -56,7 +56,7 @@ function assertThrows(funcao, mensagemEsperada = '') {
 
         funcao();
 
-        throw new Error('Esperava que a funÃ§Ã£o lancasse um erro, mas nao lancou');
+        throw new Error('Esperava que a funÃ§Ã£o lanÃ§asse um erro, mas nÃ£o lanÃ§ou');
 
     } catch (error) {
 
@@ -74,31 +74,31 @@ console.log('Iniciando bateria de testes automatizados...\n');
 
 // === TESTES DA FUNÃ‡ÃƒO SAUDACAO ===
 
-console.log('Testando funcao saudacao():');
+console.log('Testando funÃ§Ã£o saudacao():');
 
-executarTeste('Saudacao com nome valido', () => {
+executarTeste('SaudaÃ§Ã£o com nome vÃ¡lido', () => {
 
-    const resultado = saudacao('Joao');
+    const resultado = saudacao('JoÃ£o');
 
-    assertEqual(resultado, 'Ola¡, Joao! Bem-vindo ao nosso sistema CI/CD!');
+    assertEqual(resultado, 'OlÃ¡, JoÃ£o! Bem-vindo ao nosso sistema CI/CD!');
 
 });
 
-executarTeste('Saudacao com nome vazio deve falhar', () => {
+executarTeste('SaudaÃ§Ã£o com nome vazio deve falhar', () => {
 
     assertThrows(() => saudacao(''), 'Nome nÃ£o pode estar vazio');
 
 });
 
-executarTeste('Saudacao com null deve falhar', () => {
+executarTeste('SaudaÃ§Ã£o com null deve falhar', () => {
 
-    assertThrows(() => saudacao(null), 'Nome nao pode estar vazio');
+    assertThrows(() => saudacao(null), 'Nome nÃ£o pode estar vazio');
 
 });
 
 // === TESTES DA FUNÃ‡ÃƒO CALCULAR ===
 
-console.log('\n Testando funcao calcular():');
+console.log('\n Testando funÃ§Ã£o calcular():');
 
 executarTeste('Soma: 2 + 3 = 5', () => {
 
@@ -106,15 +106,15 @@ executarTeste('Soma: 2 + 3 = 5', () => {
 
 });
 
-executarTeste('Divisao por zero deve falhar', () => {
+executarTeste('DivisÃ£o por zero deve falhar', () => {
 
-    assertThrows(() => calcular(10, 0, 'divisao'), 'Divisao por zero nao e permitida');
+    assertThrows(() => calcular(10, 0, 'divisao'), 'DivisÃ£o por zero nÃ£o Ã© permitida');
 
 });
 
 // === RELATÃ“RIO FINAL ===
 
-console.log('\n RELATORIO FINAL DOS TESTES:');
+console.log('\n RELATÃ“RIO FINAL DOS TESTES:');
 
 console.log(` Total de testes: ${testesExecutados}`);
 
@@ -124,13 +124,13 @@ console.log(`Falharam: ${testesFalharam}`);
 
 if (testesFalharam > 0) {
 
-    console.log('\n ATENCAO: Alguns testes falharam! O codigo precisa ser corrigido.');
+    console.log('\n ATENÃ‡ÃƒO: Alguns testes falharam! O cÃ³digo precisa ser corrigido.');
 
     process.exit(1); // Sair com cÃ³digo de erro
 
 } else {
 
-    console.log('\n SUCESSO: Todos os testes passaram! O codigo estÃ¡ funcionando corretamente.');
+    console.log('\n SUCESSO: Todos os testes passaram! O cÃ³digo estÃ¡ funcionando corretamente.');
 
     process.exit(0); // Sair com cÃ³digo de sucesso
 
